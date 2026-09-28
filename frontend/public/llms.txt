@@ -1,0 +1,13 @@
+# Rotstruck — Software Development Studio
+
+> Rotstruck builds custom digital products: hospital management systems and EMR platforms, education platforms, e-commerce systems, SaaS products, mobile apps, business dashboards, role-based portals, workflow automation and API-connected systems.
+
+## Pages
+- / — Home: overview of capabilities, featured project MEDBUILDS, process and contact call-to-action
+- /services — Custom software, healthcare, education, e-commerce, SaaS, mobile, integrations and UI/UX design services
+- /industries — Solutions for healthcare, education, retail & e-commerce, SaaS startups, professional services and business operations
+- /projects — Case studies including MEDBUILDS (hospital platform), SKOLAR (education), VENDRA (e-commerce), PULSEBOARD (dashboards) and more
+- /process — Six-stage delivery process: Discover, Plan, Design, Build, Test, Launch
+- /about — Mission, vision and working principles
+- /contact — Project enquiry form
+- /privacy, /terms — Legal pages

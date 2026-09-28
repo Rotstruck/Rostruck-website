@@ -1,0 +1,132 @@
+{
+  "brand_identity": {
+    "name": "ROTSTRUCK",
+    "tagline": "Architects of High-Performance Custom Digital Products",
+    "industry": "Software Engineering & Enterprise Digital Systems",
+    "aesthetic_archetype": "Electric Cyber-Minimalism & Futuristic Precision",
+    "theme_strategy": "Dark-default brand experience with full Light mode toggle support. High-contrast, sharp geometric borders, glassmorphism, electric violet glows.",
+    "logo_mark": {
+      "concept": "Sharp angular 'R' construct crafted from intersecting futuristic geometric vectors and electric purple gradient paths.",
+      "svg_code": "<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M8 6H24C28.4183 6 32 9.58172 32 14C32 18.4183 28.4183 22 24 22H8V6Z\" stroke=\"url(#rotstruck_grad)\" stroke-width=\"3.5\" stroke-linejoin=\"miter\"/><path d=\"M8 22H18L28 34H18L10 24.5V34H8V22Z\" fill=\"url(#rotstruck_grad_2)\"/><path d=\"M14 12H23C24.1046 12 25 12.8954 25 14C25 15.1046 24.1046 16 23 16H14V12Z\" fill=\"#A855F7\"/><defs><linearGradient id=\"rotstruck_grad\" x1=\"8\" y1=\"6\" x2=\"32\" y2=\"34\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#A855F7\"/><stop offset=\"1\" stop-color=\"#6366F1\"/></linearGradient><linearGradient id=\"rotstruck_grad_2\" x1=\"8\" y1=\"22\" x2=\"28\" y2=\"34\" gradientUnits=\"userSpaceOnUse\"><stop stop-color=\"#C084FC\"/><stop offset=\"1\" stop-color=\"#3B82F6\"/></linearGradient></defs></svg>"
+    }
+  },
+  "typography": {
+    "primary_font": "Plus Jakarta Sans, sans-serif",
+    "heading_font": "Syne, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "hierarchy": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-tight",
+      "h3_card": "text-xl sm:text-2xl font-semibold tracking-normal",
+      "h4_title": "text-lg sm:text-xl font-medium tracking-normal",
+      "body_text": "text-base text-slate-300 dark:text-slate-300 light:text-slate-600 leading-relaxed",
+      "caption_mono": "text-xs font-mono uppercase tracking-[0.2em] text-purple-400"
+    },
+    "rules": [
+      "NO Inter for H1/H2 headlines. Headlines MUST use Syne for bold personality.",
+      "All eyebrow/overline tags must use mono font, uppercase, and tracking-[0.2em].",
+      "Maximum H1 font size capped at text-6xl (60px) to prevent layout break."
+    ]
+  },
+  "colors": {
+    "dark_theme": {
+      "bg_primary": "#04040B",
+      "bg_secondary": "#0A0A16",
+      "bg_surface_glass": "rgba(15, 15, 30, 0.65)",
+      "text_primary": "#F8FAFC",
+      "text_secondary": "#94A3B8",
+      "border_glow": "rgba(168, 85, 247, 0.25)",
+      "accent_electric": "#A855F7",
+      "accent_violet": "#8B5CF6",
+      "accent_blue_rim": "#3B82F6",
+      "gradient_primary": "linear-gradient(135deg, #A855F7 0%, #6366F1 100%)",
+      "gradient_surface": "linear-gradient(180deg, rgba(168, 85, 247, 0.08) 0%, rgba(10, 10, 22, 0) 100%)"
+    },
+    "light_theme": {
+      "bg_primary": "#F8FAFC",
+      "bg_secondary": "#EDF2F7",
+      "bg_surface_glass": "rgba(255, 255, 255, 0.85)",
+      "text_primary": "#0F172A",
+      "text_secondary": "#475569",
+      "border_glow": "rgba(124, 58, 237, 0.2)",
+      "accent_electric": "#7C3AED",
+      "accent_violet": "#6D28D9",
+      "accent_blue_rim": "#2563EB",
+      "gradient_primary": "linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%)",
+      "gradient_surface": "linear-gradient(180deg, rgba(124, 58, 237, 0.05) 0%, rgba(255, 255, 255, 0) 100%)"
+    },
+    "forbidden_colors": ["#7351B7", "#1B93A4"]
+  },
+  "surfaces_and_effects": {
+    "glassmorphism": "backdrop-blur-xl bg-opacity-70 border border-purple-500/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)]",
+    "tracing_beam_card": "relative rounded-xl border border-purple-500/30 bg-gradient-to-b from-purple-950/20 via-slate-900/40 to-slate-950/80 p-6 hover:border-purple-400/60 transition-all duration-300",
+    "device_mockups": {
+      "rule": "Device mockups (MacBook, Phone, Tablet) MUST contain ONLY abstract UI shapes, wireframes, charts, and glowing nodes. ZERO readable text inside screen vectors.",
+      "styles": "rounded-2xl border border-slate-700/60 bg-slate-950 shadow-2xl p-3 backdrop-blur-md relative overflow-hidden"
+    }
+  },
+  "threejs_3d_hero_strategy": {
+    "library": "@react-three/fiber with @react-three/drei",
+    "canvas_components": [
+      "Floating Angular Diamond Crystal (electric purple emission)",
+      "Orbiting Glass Cards with subtle wireframe grid textures",
+      "Particle Field (TSParticles or R3F Points with lavender glow)",
+      "Cursor Parallax tracking mouse delta (x,y smoothed spring motion)",
+      "Click Ripple Pulse in 3D space"
+    ],
+    "fallback": "Clean CSS/SVG interactive canvas fallback when WebGL is unsupported",
+    "lighting": "Ambient light + Violet PointLight (intensity 2.5) + Blue Rim DirectionalLight (intensity 2.0)"
+  },
+  "pages_architecture": {
+    "home": [
+      "Interactive 3D Hero + Left HTML Copy & Masked Heading Reveal",
+      "Live Capability Ticker / Editorial Marquee",
+      "Core Services Grid (8 Services)",
+      "Featured Case Study Showcase: MEDBUILDS (Hospital/Healthcare EMR Platform)",
+      "Industries Preview Grid (6 Key Sectors)",
+      "6-Step Engineering Journey / Process Preview",
+      "Why ROTSTRUCK Value Metrics & Stats",
+      "Final High-Conversion CTA Banner",
+      "Footer with Navigation, Legal Links & System Status Indicator"
+    ],
+    "services": "Detailed breakdown of 8 core technical offerings with architecture diagrams, tech stacks, and delivery SLAs.",
+    "industries": "Tailored solutions for Healthcare, Education, E-Commerce, SaaS, Enterprise Dashboards, and Fintech.",
+    "projects": "Interactive Portfolio with category filters, search bar, project metric cards, and direct links to details.",
+    "project_detail_medbuilds": "In-depth case study for MEDBUILDS — Modular Hospital Operating System & EMR Platform featuring system architecture, role-based workflows, and patient analytics.",
+    "process": "Comprehensive 6-stage delivery methodology (Discovery, System Specs, Agile Sprinting, QA/Security Audit, Deployment, Hypercare).",
+    "about": "Mission, Vision, Engineering Culture, Tech Stack Philosophy, and Leadership Team.",
+    "contact": "Interactive Project Intake Form with budget picker, project type selection, client details, validation, and real-time backend persistence.",
+    "admin_enquiries": "Secure admin view to view submitted project inquiries, status tags, and contact logs.",
+    "privacy_terms": "Complete legal compliance documentation pages."
+  },
+  "layout_and_grids": {
+    "bento_grid": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 lg:gap-8",
+    "hero_split": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[85vh] pt-24 pb-12",
+    "container_padding": "px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto"
+  },
+  "image_urls": {
+    "medbuilds_project": {
+      "url": "https://images.unsplash.com/photo-1758691461973-553db5285280?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBoZWFsdGhjYXJlJTIwZG9jdG9yJTIwbWVkaWNhbCUyMGhvc3BpdGFsJTIwZGlnaXRhbCUyMHRhYmxldHxlbnwwfHx8fDE3OTA1Nzk0ODZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Doctor reviewing digital medical scan on tablet — used for MEDBUILDS hospital case study hero"
+    },
+    "tech_stack_code": {
+      "url": "https://images.unsplash.com/photo-1619410283995-43d9134e7656?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxmdXR1cmlzdGljJTIwc29mdHdhcmUlMjBlbmdpbmVlciUyMGRpZ2l0YWwlMjB0ZWNoJTIwY29kZXxlbnwwfHx8fDE3OTA1Nzk0Nzl8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Clean modern IDE code view for development capability section"
+    },
+    "team_office": {
+      "url": "https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHxfHxzb2Z0d2FyZSUyMGRldmVsb3BlcnMlMjB3b3JraW5nJTIwaW4lMjBtb2Rlcm4lMjBvZmZpY2UlMjBzdHVkaW98ZW58MHx8fHwxNzkwNTc5NDg2fDA&ixlib=rb-4.1.0&q=85",
+      "description": "ROTSTRUCK engineering studio environment for About page"
+    }
+  },
+  "testing_and_accessibility": {
+    "data_testid_convention": "All interactive elements, forms, links, navigation items, theme toggles, and buttons MUST include kebab-case data-testid attributes (e.g. data-testid='nav-services-link', data-testid='contact-submit-btn', data-testid='theme-toggle-btn').",
+    "aria": "Include aria-expanded on mobile menu, aria-hidden='true' on purely decorative 3D canvas and SVG icons."
+  },
+  "instructions_to_main_agent": [
+    "Ensure Lenis smooth scrolling or Framer Motion scroll triggers are properly initialized.",
+    "Use sonner for toast notifications upon form submission.",
+    "Implement theme persistence using localStorage and React state/context.",
+    "Verify that ALL device mockup SVGs avoid embedded text and use abstract geometric UI blocks.",
+    "Ensure dark mode is default on initial site load."
+  ]
+}
