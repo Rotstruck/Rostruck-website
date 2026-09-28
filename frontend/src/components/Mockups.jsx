@@ -1,3 +1,10 @@
+import {
+  Award, BarChart3, Bell, BookOpen, CalendarCheck, Code2, CreditCard, Cross,
+  Database, Gauge, GitBranch, GraduationCap, HeartPulse, Layers, LineChart,
+  MapPin, Palette, PenTool, Pill, Plug2, Shapes, ShoppingBag, ShoppingCart,
+  Smartphone, Stethoscope, Terminal, Users, Webhook, Zap,
+} from "lucide-react";
+
 const ACCENTS = {
   hospital: "#2dd4bf",
   patient: "#2dd4bf",
@@ -8,6 +15,20 @@ const ACCENTS = {
   automation: "#60a5fa",
   mobile: "#e879f9",
   design: "#f0abfc",
+  code: "#a855f6",
+};
+
+const VARIANT_THEME = {
+  hospital: { accent: "#2dd4bf", icons: [Cross, Stethoscope, Pill] },
+  patient: { accent: "#2dd4bf", icons: [HeartPulse, CalendarCheck, Stethoscope] },
+  education: { accent: "#818cf8", icons: [BookOpen, GraduationCap, Award] },
+  commerce: { accent: "#c084fc", icons: [ShoppingBag, ShoppingCart, CreditCard] },
+  saas: { accent: "#a78bfa", icons: [Layers, Database, Users] },
+  dashboard: { accent: "#8b5cf6", icons: [BarChart3, Gauge, LineChart] },
+  automation: { accent: "#60a5fa", icons: [Plug2, Webhook, Zap] },
+  mobile: { accent: "#e879f9", icons: [Smartphone, Bell, MapPin] },
+  design: { accent: "#f0abfc", icons: [PenTool, Palette, Shapes] },
+  code: { accent: "#a855f6", icons: [Code2, Terminal, GitBranch] },
 };
 
 const WIDTHS = [68, 42, 84, 56, 30, 74, 48, 62, 38, 90, 52, 78];
@@ -59,6 +80,7 @@ function Chart({ accent }) {
 
 export function AbstractUI({ variant = "dashboard", compact = false }) {
   const accent = ACCENTS[variant] || "#a855f7";
+  const Glyph = (VARIANT_THEME[variant] || VARIANT_THEME.dashboard).icons[0];
   if (compact) {
     return (
       <div className="flex h-full w-full flex-col gap-2 bg-gradient-to-br from-[#0b0b18] to-[#141430] p-3">
@@ -66,7 +88,7 @@ export function AbstractUI({ variant = "dashboard", compact = false }) {
           <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
           <span className="h-1.5 w-1.5 rounded-full bg-slate-500/50" />
           <span className="h-1.5 w-1.5 rounded-full bg-slate-500/50" />
-          <div className="ml-auto h-2 w-10 rounded-full bg-slate-500/25" />
+          <Glyph className="ml-auto h-3 w-3" style={{ color: accent }} strokeWidth={2.4} />
         </div>
         <div className="rounded-lg border border-white/5 bg-white/[0.04] p-2">
           <Bar w={WIDTHS[1]} accent={accent} bright />
@@ -93,7 +115,9 @@ export function AbstractUI({ variant = "dashboard", compact = false }) {
         <span className="h-2 w-2 rounded-full" style={{ background: accent }} />
         <span className="h-2 w-2 rounded-full bg-slate-500/50" />
         <span className="h-2 w-2 rounded-full bg-slate-500/50" />
-        <div className="ml-auto h-2.5 w-[22%] rounded-full bg-slate-500/25" />
+        <div className="ml-auto flex h-5 w-5 items-center justify-center rounded-md" style={{ background: `${accent}26` }}>
+          <Glyph className="h-3 w-3" style={{ color: accent }} strokeWidth={2.4} />
+        </div>
       </div>
       <div className="flex flex-1 gap-[2.5%]">
         <div className="flex w-[16%] flex-col gap-1.5">
@@ -163,13 +187,76 @@ export function Phone({ variant = "patient", className = "" }) {
   );
 }
 
-export function DeviceTrio({ variant = "hospital", phoneVariant = "patient", className = "" }) {
+export function IconBadge({ Icon, accent, className = "", delay = 0 }) {
   return (
-    <div className={`relative ${className}`} aria-hidden="true">
-      <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/25 blur-3xl" />
-      <Tablet variant={variant} className="absolute -left-2 top-0 w-[46%] rotate-[-4deg] opacity-90" />
-      <Macbook variant={variant} className="relative z-10 ml-auto w-[82%]" />
-      <Phone variant={phoneVariant} className="absolute -bottom-4 right-[2%] z-20 w-24 animate-float-soft sm:w-28" />
+    <div
+      className={`glass-panel absolute z-30 flex h-11 w-11 items-center justify-center rounded-2xl animate-float-soft ${className}`}
+      style={{ animationDelay: `${delay}s`, boxShadow: `0 0 26px ${accent}66` }}
+      aria-hidden="true"
+    >
+      <Icon className="h-5 w-5" style={{ color: accent }} strokeWidth={2.2} />
     </div>
   );
+}
+
+const BADGE_SPOTS = ["-left-3 top-[4%]", "-right-3 top-[32%]", "left-[10%] -bottom-3"];
+
+function SceneDevices({ layout, variant, phoneVariant }) {
+  const pv = phoneVariant || (variant === "hospital" ? "patient" : variant);
+  switch (layout) {
+    case "tablet":
+      return <Tablet variant={variant} className="relative z-10 mx-auto w-[76%]" />;
+    case "tablet-phone":
+      return (
+        <>
+          <Tablet variant={variant} className="relative z-10 ml-3 w-[74%]" />
+          <Phone variant={pv} className="absolute -bottom-3 right-[2%] z-20 w-24 animate-float-soft" />
+        </>
+      );
+    case "laptop-phone":
+      return (
+        <>
+          <Macbook variant={variant} className="relative z-10 mx-auto w-[82%]" />
+          <Phone variant={pv} className="absolute -bottom-4 right-[1%] z-20 w-24 animate-float-soft sm:w-28" />
+        </>
+      );
+    case "phones":
+      return (
+        <div className="relative z-10 flex items-end justify-center gap-3">
+          <Phone variant="patient" className="w-24 animate-float-soft" />
+          <Phone variant="commerce" className="w-28" />
+          <Phone variant="education" className="w-24 animate-float" />
+        </div>
+      );
+    case "trio":
+      return (
+        <>
+          <Tablet variant={variant} className="absolute -left-2 top-0 w-[46%] rotate-[-4deg] opacity-90" />
+          <Macbook variant={variant} className="relative z-10 ml-auto w-[82%]" />
+          <Phone variant={pv} className="absolute -bottom-4 right-[2%] z-20 w-24 animate-float-soft sm:w-28" />
+        </>
+      );
+    default:
+      return <Macbook variant={variant} className="relative z-10 mx-auto w-[88%]" />;
+  }
+}
+
+export function DeviceScene({ variant = "dashboard", layout = "laptop", phoneVariant, className = "" }) {
+  const theme = VARIANT_THEME[variant] || VARIANT_THEME.dashboard;
+  return (
+    <div className={`relative ${className}`} aria-hidden="true">
+      <div
+        className="absolute left-1/2 top-1/2 h-60 w-60 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
+        style={{ background: `${theme.accent}30` }}
+      />
+      <SceneDevices layout={layout} variant={variant} phoneVariant={phoneVariant} />
+      {theme.icons.map((Icon, i) => (
+        <IconBadge key={i} Icon={Icon} accent={theme.accent} className={BADGE_SPOTS[i]} delay={i * 1.1} />
+      ))}
+    </div>
+  );
+}
+
+export function DeviceTrio({ variant = "hospital", phoneVariant = "patient", className = "" }) {
+  return <DeviceScene variant={variant} layout="trio" phoneVariant={phoneVariant} className={className} />;
 }

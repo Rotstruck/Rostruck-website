@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Code2 } from "lucide-react";
 import { Phone, Macbook } from "@/components/Mockups";
 
 export function Constellation({ count = 6, active, dark }) {
@@ -203,7 +204,14 @@ export function CtaVisual({ dark }) {
         <Macbook variant="saas" className="relative z-10 mx-auto w-[76%]" />
       </div>
       <Phone variant="mobile" className="absolute -bottom-3 right-[4%] z-20 w-24 animate-float-soft sm:w-28" />
-      <div className="absolute -left-2 top-[6%] z-20 h-14 w-14 rotate-45 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 opacity-90 shadow-[0_0_40px_rgba(168,85,247,0.55)] animate-float-soft" />
+      <img
+        src="/assets/logo-mark.png"
+        alt=""
+        className="absolute -left-2 top-[2%] z-20 h-16 w-auto animate-float drop-shadow-[0_0_34px_rgba(168,85,247,0.85)]"
+      />
+      <div className="glass-panel absolute right-[8%] top-[6%] z-20 flex h-12 w-12 items-center justify-center rounded-2xl animate-float-soft" style={{ boxShadow: "0 0 30px rgba(168,85,247,0.6)" }}>
+        <Code2 className="h-6 w-6 text-purple-500 dark:text-purple-300" />
+      </div>
     </div>
   );
 }

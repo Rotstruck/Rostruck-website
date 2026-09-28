@@ -4,10 +4,21 @@ import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import FinalCTA from "@/components/FinalCTA";
 import { Constellation } from "@/components/Visuals";
-import { Macbook, Phone } from "@/components/Mockups";
+import { DeviceScene } from "@/components/Mockups";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { useTheme } from "@/context/ThemeContext";
 import { SERVICES } from "@/data";
+
+const SERVICE_LAYOUTS = {
+  "custom-software": "laptop",
+  healthcare: "trio",
+  education: "tablet",
+  ecommerce: "laptop-phone",
+  saas: "tablet-phone",
+  mobile: "phones",
+  integrations: "laptop",
+  uiux: "tablet",
+};
 
 export default function Services() {
   const { theme } = useTheme();
@@ -83,18 +94,7 @@ export default function Services() {
                     ))}
                   </ul>
                 </div>
-                <div className="relative">
-                  <div className="absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/20 blur-3xl" aria-hidden="true" />
-                  {s.slug === "mobile" ? (
-                    <div className="relative flex items-end justify-center gap-4">
-                      <Phone variant="patient" className="w-28 animate-float-soft" />
-                      <Phone variant="commerce" className="w-32" />
-                      <Phone variant="education" className="w-28 animate-float" />
-                    </div>
-                  ) : (
-                    <Macbook variant={s.variant} className="relative mx-auto w-full max-w-md" />
-                  )}
-                </div>
+                <DeviceScene variant={s.variant} layout={SERVICE_LAYOUTS[s.slug] || "laptop"} className="relative mx-auto max-w-md" />
               </div>
             </article>
           </Reveal>

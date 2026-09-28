@@ -36,7 +36,7 @@ export const SERVICES = [
     slug: "custom-software",
     name: "Custom Software Development",
     icon: Code2,
-    variant: "dashboard",
+    variant: "code",
     tagline: "Software shaped around the way your business actually works.",
     description:
       "Off-the-shelf tools force your team to work their way. Rotstruck builds software around your exact workflows — internal systems, dashboards and portals that fit from day one.",

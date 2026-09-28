@@ -24,6 +24,12 @@ Build a complete, premium, responsive company website for ROTSTRUCK — Software
 - Accessibility: semantic HTML, one H1/page, focus styles, aria labels, prefers-reduced-motion.
 - SEO floor: static head meta/OG/Twitter/JSON-LD, noscript fallback, robots.txt, llms.txt (canonical/sitemap pending production domain).
 
+## Implemented (2026-09-28, update 2)
+- Swapped to the new uploaded hexagonal-R logo mark (navbar, footer, marquee, orbit core, CTA, favicon).
+- Themed device scenes: every mockup composition now has floating glass icon badges matched to its domain — MEDBUILDS/healthcare: plus, stethoscope, pill (teal); education: book, graduation cap, award; e-commerce: bag, cart, card; SaaS: layers, database, users; dashboards: charts/gauge; integrations: plug, webhook, zap; mobile: phone, bell, pin; UI/UX: pen, palette, shapes; custom software: code, terminal, git. Screens also carry a small themed glyph in the corner.
+- Services page: each of the 8 services uses a different device layout (laptop, trio, tablet, laptop+phone, tablet+phone, triple phones) — no repeated laptop-everywhere.
+- "Let's Build Something Useful" CTA: glowing Rotstruck logo + </> code chip float beside the device mockups with light trails.
+
 ## Implemented (2026-09-28)
 - Full site: all 10 routes built and verified with screenshots in both themes + mobile/tablet/desktop.
 - R3F hero: purple octahedron gem in wireframe icosahedron, 3D MacBook/phone with abstract UI, glass cards, particles, glow rings, cursor parallax, click pulse, scroll drift, viewport pause, fallbacks.
