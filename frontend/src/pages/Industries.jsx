@@ -65,7 +65,7 @@ export default function Industries() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: EASE }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
                         className="overflow-hidden"
                       >
                         <ul className="mt-4 flex flex-wrap gap-2 border-t border-purple-500/15 pt-4">

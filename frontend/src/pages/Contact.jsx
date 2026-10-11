@@ -1,14 +1,13 @@
 import { useState } from "react";
-import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send, Upload } from "lucide-react";
+import { Link } from "react-router-dom";
+import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
 import { toast } from "sonner";
 import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import { ContactVisual } from "@/components/Visuals";
 import { Reveal } from "@/components/Reveal";
 import { useTheme } from "@/context/ThemeContext";
-import { BUDGETS, CONTACT, INDUSTRIES, SERVICES, TIMELINES } from "@/data";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import { CONTACT, INDUSTRIES, SERVICES } from "@/data";
 
 const inputCls =
   "w-full rounded-xl border border-input bg-background/60 px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-purple-400/70";
@@ -31,9 +30,10 @@ export default function Contact() {
   const { theme } = useTheme();
   const [form, setForm] = useState({
     fullName: "", company: "", email: "", phone: "", industry: "", service: "",
-    description: "", budget: "", timeline: "",
+    description: "",
   });
-  const [file, setFile] = useState(null);
+  const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
   const [errors, setErrors] = useState({});
   const [state, setState] = useState("idle");
 
@@ -44,6 +44,7 @@ export default function Contact() {
     if (form.fullName.trim().length < 2) errs.fullName = "Please enter your full name.";
     if (!/^\S+@\S+\.\S+$/.test(form.email)) errs.email = "Please enter a valid email address.";
     if (form.description.trim().length < 10) errs.description = "Tell us a little more (at least 10 characters).";
+    if (!consent) errs.consent = "Please agree to the Privacy Policy before submitting.";
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -53,22 +54,57 @@ export default function Contact() {
     if (!validate()) return;
     setState("loading");
     try {
-      const fd = new FormData();
-      fd.append("full_name", form.fullName);
-      fd.append("email", form.email);
-      fd.append("company", form.company);
-      fd.append("phone", form.phone);
-      fd.append("industry", form.industry);
-      fd.append("service", form.service);
-      fd.append("description", form.description);
-      fd.append("budget", form.budget);
-      fd.append("timeline", form.timeline);
-      if (file) fd.append("file", file);
-      const res = await fetch(`${API}/enquiries`, { method: "POST", body: fd });
+      const payload = {
+        n: form.fullName,
+        c: form.company,
+        e: form.email,
+        p: form.phone,
+        i: form.industry,
+        s: form.service,
+        d: form.description,
+        w: honeypot,
+      };
+
+      // Try Vercel Serverless Function /api/contact first, fallback to /contact.php if running on PHP host
+      let res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.status === 404) {
+        // Fallback to contact.php for PHP hosting environments
+        const phpRes = await fetch("/contact.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }).catch(() => null);
+
+        if (phpRes && phpRes.status !== 404) {
+          res = phpRes;
+        }
+      }
+
+      // Handle dev-server fallback when running without local API runtime
+      if (window.location.hostname === "localhost" && res.status === 404) {
+        console.warn("[Contact] Local dev server does not have API running. Simulating success on localhost.");
+        setState("success");
+        return;
+      }
+
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(typeof data.detail === "string" ? data.detail : "Something went wrong. Please try again.");
+        if (res.status === 429) {
+          throw new Error("Too many submissions. Please wait 60 seconds before trying again.");
+        }
+        throw new Error(typeof data.error === "string" ? data.error : "Something went wrong. Please try again.");
       }
+
+      const data = await res.json().catch(() => ({}));
+      if (data.ok === false) {
+        throw new Error(data.error || "Could not send your enquiry. Please try again.");
+      }
+
       setState("success");
     } catch (err) {
       setState("error");
@@ -136,28 +172,45 @@ export default function Contact() {
                         <textarea id="contact-description" data-testid="contact-description-input" rows={5} className={inputCls} value={form.description} onChange={set("description")} placeholder="What are you building? What problem does it solve? Who uses it?" />
                       </Field>
                     </div>
-                    <Field label="Budget Range" id="contact-budget">
-                      <select id="contact-budget" data-testid="contact-budget-select" className={inputCls} value={form.budget} onChange={set("budget")}>
-                        <option value="">Select a range</option>
-                        {BUDGETS.map((b) => <option key={b} value={b}>{b}</option>)}
-                      </select>
-                    </Field>
-                    <Field label="Expected Timeline" id="contact-timeline">
-                      <select id="contact-timeline" data-testid="contact-timeline-select" className={inputCls} value={form.timeline} onChange={set("timeline")}>
-                        <option value="">Select a timeline</option>
-                        {TIMELINES.map((t) => <option key={t} value={t}>{t}</option>)}
-                      </select>
-                    </Field>
-                    <div className="sm:col-span-2">
-                      <label htmlFor="contact-file" className={labelCls}>Attachment (optional, max 2 MB)</label>
-                      <label
-                        htmlFor="contact-file"
-                        className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-purple-500/35 bg-purple-500/[0.04] px-4 py-4 text-sm text-muted-foreground transition-colors hover:border-purple-400/70"
-                      >
-                        <Upload className="h-4 w-4 text-purple-500" aria-hidden="true" />
-                        {file ? file.name : "Brief, RFP, or reference file"}
+                    {/* Hidden bot honeypot */}
+                    <input
+                      type="text"
+                      name="website_honey"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="hidden"
+                      style={{ display: "none" }}
+                    />
+
+                    {/* Consent checkbox */}
+                    <div className="sm:col-span-2 pt-2">
+                      <label htmlFor="contact-consent" className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground select-none">
+                        <input
+                          type="checkbox"
+                          id="contact-consent"
+                          data-testid="contact-consent-checkbox"
+                          checked={consent}
+                          onChange={(e) => {
+                            setConsent(e.target.checked);
+                            if (errors.consent) setErrors((prev) => ({ ...prev, consent: null }));
+                          }}
+                          className="mt-1 h-4 w-4 rounded border-purple-500/40 text-purple-600 focus:ring-purple-500"
+                        />
+                        <span>
+                          I agree to the{" "}
+                          <Link to="/privacy" className="text-purple-400 underline underline-offset-4 hover:text-purple-300">
+                            Privacy Policy
+                          </Link>{" "}
+                          and consent to Rotstruck processing my enquiry details.{" "}
+                          <span className="text-purple-500" aria-hidden="true">*</span>
+                        </span>
                       </label>
-                      <input id="contact-file" data-testid="contact-file-input" type="file" className="sr-only" onChange={(e) => setFile(e.target.files?.[0] || null)} />
+                      {errors.consent && (
+                        <p className={errCls} data-testid="contact-consent-error">{errors.consent}</p>
+                      )}
                     </div>
                   </div>
                   <button
@@ -169,7 +222,7 @@ export default function Contact() {
                     {state === "loading" ? (
                       <><Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> Sending…</>
                     ) : (
-                      <>Start the Conversation <Send className="h-4 w-4" aria-hidden="true" /></>
+                      <>Send <Send className="h-4 w-4" aria-hidden="true" /></>
                     )}
                   </button>
                   {state === "error" && (

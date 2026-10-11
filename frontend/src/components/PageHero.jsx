@@ -13,7 +13,7 @@ export default function PageHero({ eyebrow, title, lede, children }) {
           lines={Array.isArray(title) ? title : [title]}
           className="mt-4 font-display text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
         />
-        <Reveal delay={0.35}>
+        <Reveal delay={0.1}>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">{lede}</p>
         </Reveal>
         {children}

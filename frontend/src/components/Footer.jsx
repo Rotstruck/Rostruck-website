@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Github, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { CONTACT, INDUSTRIES, NAV_LINKS, SERVICES } from "@/data";
 
 export default function Footer() {
@@ -34,24 +34,7 @@ export default function Footer() {
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
               Custom software, digital products, and connected systems for modern businesses.
             </p>
-            <div className="mt-6 flex gap-3">
-              {[
-                { icon: Twitter, label: "Rotstruck on X", id: "social-x" },
-                { icon: Linkedin, label: "Rotstruck on LinkedIn", id: "social-linkedin" },
-                { icon: Github, label: "Rotstruck on GitHub", id: "social-github" },
-                { icon: Instagram, label: "Rotstruck on Instagram", id: "social-instagram" },
-              ].map(({ icon: Icon, label, id }) => (
-                <a
-                  key={id}
-                  href="#"
-                  aria-label={label}
-                  data-testid={id}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-400 transition-colors duration-300 hover:border-purple-400/60 hover:text-purple-300"
-                >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              ))}
-            </div>
+
           </div>
 
           <nav aria-label="Footer navigation">

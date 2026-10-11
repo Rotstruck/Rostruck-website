@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 
 export const EASE = [0.22, 1, 0.36, 1];
 
-export function Reveal({ children, delay = 0, y = 28, className = "" }) {
+export function Reveal({ children, delay = 0, y = 8, className = "" }) {
   return (
     <motion.div
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-70px" }}
-      transition={{ duration: 0.7, delay, ease: EASE }}
+      viewport={{ once: true, margin: "100px 0px" }}
+      transition={{ duration: 0.22, delay, ease: EASE }}
       className={className}
     >
       {children}
@@ -16,7 +16,7 @@ export function Reveal({ children, delay = 0, y = 28, className = "" }) {
   );
 }
 
-export function MaskedLines({ lines, as: Tag = "h1", className = "", lineClassName = "", baseDelay = 0.1 }) {
+export function MaskedLines({ lines, as: Tag = "h1", className = "", lineClassName = "", baseDelay = 0 }) {
   const items = Array.isArray(lines) ? lines : [lines];
   return (
     <Tag className={className}>
@@ -26,7 +26,7 @@ export function MaskedLines({ lines, as: Tag = "h1", className = "", lineClassNa
             className={`block ${lineClassName}`}
             initial={{ y: "115%" }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.9, delay: baseDelay + i * 0.12, ease: EASE }}
+            transition={{ duration: 0.35, delay: baseDelay + i * 0.04, ease: EASE }}
           >
             {line}
           </motion.span>
@@ -41,10 +41,10 @@ export function Stagger({ children, className = "", delay = 0 }) {
     <motion.div
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-60px" }}
+      viewport={{ once: true, margin: "100px 0px" }}
       variants={{
         hidden: {},
-        show: { transition: { staggerChildren: 0.08, delayChildren: delay } },
+        show: { transition: { staggerChildren: 0.025, delayChildren: delay } },
       }}
       className={className}
     >
@@ -57,8 +57,8 @@ export function StaggerItem({ children, className = "" }) {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 26 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+        hidden: { opacity: 0, y: 8 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: EASE } },
       }}
       className={className}
     >

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import Lenis from "lenis";
 import { ThemeProvider } from "@/context/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -26,21 +25,6 @@ function ScrollToTop() {
 }
 
 function App() {
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
-    let id;
-    const raf = (t) => {
-      lenis.raf(t);
-      id = requestAnimationFrame(raf);
-    };
-    id = requestAnimationFrame(raf);
-    return () => {
-      cancelAnimationFrame(id);
-      lenis.destroy();
-    };
-  }, []);
-
   return (
     <ThemeProvider>
       <BrowserRouter>

@@ -29,7 +29,7 @@ export function Constellation({ count = 6, active, dark }) {
       {nodes.map((n, i) => (
         <div
           key={i}
-          className="absolute -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+          className="absolute -translate-x-1/2 -translate-y-1/2 transition-all duration-200"
           style={{
             left: `${n.x}%`, top: `${n.y}%`,
             transform: `translate(-50%,-50%) scale(${active === i ? 1.3 : active == null ? 1 : 0.85})`,
@@ -37,7 +37,7 @@ export function Constellation({ count = 6, active, dark }) {
           }}
         >
           <div
-            className={`h-11 w-11 rounded-lg border backdrop-blur-md transition-shadow duration-500 ${
+            className={`h-11 w-11 rounded-lg border backdrop-blur-sm transition-shadow duration-200 ${
               active === i
                 ? "border-purple-400/80 bg-purple-500/25 shadow-[0_0_30px_rgba(168,85,247,0.6)]"
                 : "border-purple-500/25 bg-purple-500/10"
@@ -62,13 +62,13 @@ export function OrbitVisual({ count = 6, active, dark }) {
       <div className="absolute inset-[8%] rounded-full border border-dashed border-purple-500/25 animate-spin-slower" />
       <div className="absolute inset-[26%] rounded-full border border-purple-500/12" />
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className={`absolute -inset-10 rounded-full blur-3xl animate-pulse-glow ${dark ? "bg-purple-600/45" : "bg-purple-400/30"}`} />
+        <div className={`absolute -inset-10 rounded-full blur-xl animate-pulse-glow ${dark ? "bg-purple-600/45" : "bg-purple-400/30"}`} />
         <img src="/assets/logo-mark.png" alt="" className="relative h-20 w-auto drop-shadow-[0_0_24px_rgba(168,85,247,0.6)]" />
       </div>
       {nodes.map((n, i) => (
         <div
           key={i}
-          className="absolute -translate-x-1/2 -translate-y-1/2 transition-all duration-500"
+          className="absolute -translate-x-1/2 -translate-y-1/2 transition-all duration-200"
           style={{
             left: `${n.x}%`, top: `${n.y}%`,
             transform: `translate(-50%,-50%) scale(${active === i ? 1.35 : 1})`,
@@ -76,7 +76,7 @@ export function OrbitVisual({ count = 6, active, dark }) {
           }}
         >
           <div
-            className={`h-9 w-9 transition-shadow duration-500 ${
+            className={`h-9 w-9 transition-shadow duration-200 ${
               active === i
                 ? "bg-gradient-to-br from-purple-400 to-indigo-500 shadow-[0_0_28px_rgba(168,85,247,0.7)]"
                 : dark ? "bg-purple-500/25" : "bg-purple-500/20"

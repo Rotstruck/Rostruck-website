@@ -29,11 +29,11 @@ export function Privacy() {
         title="Privacy Policy"
         updated="January 2026"
         sections={[
-          ["Information we collect", "When you contact Rotstruck through this website, we collect the details you provide in the enquiry form: your name, company, email address, phone number, project description, budget and timeline preferences, and any file you choose to attach. We also collect standard technical information such as browser type and pages visited, used only to improve the website."],
+          ["Information we collect", "When you contact Rotstruck through this website, we collect the details you provide in the enquiry form: your name, company, email address, phone number, project description, budget and timeline preferences. We also collect standard technical information such as browser type and pages visited, used only to improve the website."],
           ["How we use your information", "We use the information you provide solely to respond to your enquiry, prepare proposals, and communicate about potential or active projects. We do not sell, rent, or trade your personal information to third parties."],
-          ["Data storage and security", "Enquiry data is stored in access-controlled systems. Project attachments are stored alongside your enquiry and are accessible only to the Rotstruck team handling your request. We apply industry-standard practices to protect data against unauthorized access."],
+          ["Data storage and retention", "Enquiry data is transmitted securely to our hosting mailbox and retained for up to 12 months solely for project correspondence, evaluation, and quoting. We do not retain old enquiries indefinitely or collect unsolicited file attachments. We apply industry-standard authentication and security practices to protect data against unauthorized access."],
           ["Cookies and analytics", "This website uses privacy-conscious analytics to understand aggregate usage patterns. Your theme preference is stored locally in your browser and never leaves your device."],
-          ["Your rights", "You may request access to, correction of, or deletion of your personal information at any time by contacting us at hello@rotstruck.com. We will respond to verified requests within a reasonable timeframe."],
+          ["Your rights", "You may request access to, correction of, or deletion of your personal information at any time by contacting us at team@rotstruck.in. We will respond to verified requests within a reasonable timeframe."],
           ["Changes to this policy", "We may update this policy as our services evolve. Material changes will be reflected on this page with an updated revision date."],
         ]}
       />
@@ -55,7 +55,7 @@ export function Terms() {
           ["Enquiries and proposals", "Submitting the contact form does not create a client relationship or obligation on either side. Project scope, pricing, timelines and deliverables are defined only in a mutually signed agreement."],
           ["Intellectual property", "The Rotstruck name, logo, and website content are the property of Rotstruck Software Development. Intellectual property terms for client work are defined per project agreement."],
           ["Limitation of liability", "The website is provided as-is. While we work to keep information accurate and the site available, Rotstruck is not liable for decisions made based on website content or for temporary unavailability."],
-          ["Contact", "Questions about these terms can be sent to hello@rotstruck.com."],
+          ["Contact", "Questions about these terms can be sent to team@rotstruck.in."],
         ]}
       />
     </>

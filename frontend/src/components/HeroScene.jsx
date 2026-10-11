@@ -189,7 +189,7 @@ function Rig({ dark }) {
   }, []);
   useFrame((state, dt) => {
     if (!rig.current) return;
-    const damp = 1 - Math.pow(0.0008, dt);
+    const damp = 1 - Math.pow(0.0001, dt);
     rig.current.rotation.y += (state.pointer.x * 0.2 - rig.current.rotation.y) * damp;
     rig.current.rotation.x += (-state.pointer.y * 0.1 - rig.current.rotation.x) * damp;
     rig.current.position.y += (Math.min(scroll.current, 700) * 0.0011 - rig.current.position.y) * damp;
@@ -270,9 +270,10 @@ export default function HeroScene() {
     <div ref={holder} className="relative h-[420px] lg:h-[560px]" data-testid="hero-3d-scene" aria-hidden="true">
       <GLBoundary fallback={<HeroFallback dark={dark} />}>
         <Canvas
-          dpr={[1, 1.75]}
+          dpr={[1, 1.5]}
           camera={{ position: [0, 0.35, 7.4], fov: 42 }}
-          gl={{ antialias: true, alpha: true }}
+          gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+          performance={{ min: 0.5 }}
           frameloop={visible ? "always" : "never"}
           style={{ background: "transparent" }}
         >
@@ -281,7 +282,7 @@ export default function HeroScene() {
           <pointLight position={[-4, 1, -2]} intensity={dark ? 20 : 7} color="#3b82f6" distance={15} />
           <directionalLight position={[-3, 4, -4]} intensity={dark ? 1.5 : 0.9} color="#60a5fa" />
           <Rig dark={dark} />
-          <Particles dark={dark} count={220} />
+          <Particles dark={dark} count={120} />
         </Canvas>
       </GLBoundary>
     </div>

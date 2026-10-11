@@ -1,0 +1,14 @@
+{
+  "name": "rotstruck-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rotstruck Digital Products & Architecture",
+  "scripts": {
+    "build": "cd frontend && yarn build",
+    "start": "cd frontend && yarn start",
+    "test": "cd frontend && yarn test"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
