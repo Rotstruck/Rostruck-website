@@ -1,13 +1,15 @@
 # Rotstruck — Software Development Studio
-
+> Website: https://rotstruck.in
+> Contact: team@rotstruck.in
 > Rotstruck builds custom digital products: hospital management systems and EMR platforms, education platforms, e-commerce systems, SaaS products, mobile apps, business dashboards, role-based portals, workflow automation and API-connected systems.
 
 ## Pages
-- / — Home: overview of capabilities, featured project MEDBUILDS, process and contact call-to-action
-- /services — Custom software, healthcare, education, e-commerce, SaaS, mobile, integrations and UI/UX design services
-- /industries — Solutions for healthcare, education, retail & e-commerce, SaaS startups, professional services and business operations
-- /projects — Case studies including MEDBUILDS (hospital platform), SKOLAR (education), VENDRA (e-commerce), PULSEBOARD (dashboards) and more
-- /process — Six-stage delivery process: Discover, Plan, Design, Build, Test, Launch
-- /about — Mission, vision and working principles
-- /contact — Project enquiry form
-- /privacy, /terms — Legal pages
+- https://rotstruck.in/ — Home: overview of capabilities, featured project MEDBUILDS, process and contact call-to-action
+- https://rotstruck.in/services — Custom software, healthcare, education, e-commerce, SaaS, mobile, integrations and UI/UX design services
+- https://rotstruck.in/industries — Solutions for healthcare, education, retail & e-commerce, SaaS startups, professional services and business operations
+- https://rotstruck.in/projects — Case studies including MEDBUILDS (hospital platform), SKOLAR (education), VENDRA (e-commerce), PULSEBOARD (dashboards) and more
+- https://rotstruck.in/process — Six-stage delivery process: Discover, Plan, Design, Build, Test, Launch
+- https://rotstruck.in/about — Mission, vision and working principles
+- https://rotstruck.in/contact — Project enquiry form
+- https://rotstruck.in/privacy — Privacy policy
+- https://rotstruck.in/terms — Terms of service
