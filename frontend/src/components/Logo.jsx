@@ -10,8 +10,8 @@ export default function Logo({ compact = false }) {
       />
       <span className="flex flex-col leading-none">
         <span className="font-display text-lg font-bold tracking-[0.14em]">
-          <span className="text-purple-500 dark:text-purple-400">ROTS</span>
-          <span className="text-foreground">TRUCK</span>
+          <span className="text-purple-500 dark:text-purple-400">ROT</span>
+          <span className="text-foreground">STRUCK</span>
         </span>
         {!compact && (
           <span className="mt-1 font-mono text-[8px] tracking-[0.34em] text-muted-foreground">

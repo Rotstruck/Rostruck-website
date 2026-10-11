@@ -14,10 +14,10 @@ export const NAV_LINKS = [
 ];
 
 export const CONTACT = {
-  email: "hello@rotstruck.com",
-  phone: "+1 (555) 012-3456",
-  location: "Remote-first studio · clients worldwide",
-  hours: "Mon–Fri · 9:00–18:00",
+  email: "team@rotstruck.in",
+  phone: "+91 8805775486",
+  location: "Chennai, India",
+  hours: "Anytime — we work across time zones",
 };
 
 export const CAPABILITIES = [
@@ -359,6 +359,6 @@ export const TIMELINES = ["As soon as possible", "1–3 months", "3–6 months",
 
 export const IMAGES = {
   medbuilds: "https://images.unsplash.com/photo-1758691461973-553db5285280?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBoZWFsdGhjYXJlJTIwZG9jdG9yJTIwbWVkaWNhbCUyMGhvc3BpdGFsJTIwZGlnaXRhbCUyMHRhYmxldHxlbnwwfHx8fDE3OTA1Nzk0ODZ8MA&ixlib=rb-4.1.0&q=85",
-  code: "https://images.unsplash.com/photo-1619410283995-43d9134e7656?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxmdXR1cmlzdGljJTIwc29mdHdhcmUlMjBlbmdpbmVlciUyMGRpZ2l0YWwlMjB0ZWNoJTIwY29kZXxlbnwwfHx8fDE3OTA1Nzk0Nzl8MA&ixlib=rb-4.1.0&q=85",
+  code: "/assets/full-stack-architecture.jpg",
   studio: "https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHxfHxzb2Z0d2FyZSUyMGRldmVsb3BlcnMlMjB3b3JraW5nJTIwaW4lMjBtb2Rlcm4lMjBvZmZpY2UlMjBzdHVkaW98ZW58MHx8fHwxNzkwNTc5NDg2fDA&ixlib=rb-4.1.0&q=85",
 };

@@ -233,8 +233,8 @@ export default function Home() {
               <div className="absolute -inset-6 rounded-3xl bg-purple-600/15 blur-2xl" aria-hidden="true" />
               <img
                 src={IMAGES.code}
-                alt="Engineering workspace showing clean software code"
-                className="relative aspect-[4/3] w-full rounded-2xl border border-purple-500/25 object-cover shadow-2xl [clip-path:polygon(0_0,100%_0,100%_88%,88%_100%,0_100%)]"
+                alt="Rotstruck connected full-stack architecture diagram showing frontend, backend, APIs, databases, cloud, and security"
+                className="relative aspect-[4/3] w-full rounded-2xl border border-purple-500/25 object-cover shadow-2xl"
                 loading="lazy"
               />
             </div>

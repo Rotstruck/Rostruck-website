@@ -27,8 +27,8 @@ export default function Footer() {
             <div className="flex items-center gap-2.5">
               <img src="/assets/logo-mark.png" alt="Rotstruck logo" className="h-9 w-auto" />
               <span className="font-display text-lg font-bold tracking-[0.14em]">
-                <span className="text-purple-400">ROTS</span>
-                <span className="text-white">TRUCK</span>
+                <span className="text-purple-400">ROT</span>
+                <span className="text-white">STRUCK</span>
               </span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
