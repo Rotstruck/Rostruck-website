@@ -15,8 +15,9 @@ export default function Process() {
   return (
     <>
       <Seo
-        title="Process — ROTSTRUCK"
-        description="A clear development process for turning business challenges into useful digital products: Discover, Plan, Design, Build, Test, Launch."
+        title="Our Development Process | Rotstruck — Discover, Design, Build, Launch"
+        description="Rotstruck follows a six-stage development process: Discover, Plan, Design, Build, Test and Launch. We turn your business challenges into reliable, scalable digital products."
+        path="/process"
       />
       <PageHero
         eyebrow="Our process"

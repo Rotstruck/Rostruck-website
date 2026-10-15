@@ -12,8 +12,9 @@ export default function About() {
   return (
     <>
       <Seo
-        title="About — ROTSTRUCK"
-        description="Rotstruck turns complex business problems into clear, scalable digital products. Our mission, vision and how we work."
+        title="About Rotstruck | Custom Software Development Studio in Chennai"
+        description="Rotstruck is a software development studio in Chennai, India. We turn complex business problems into clear, scalable digital products for healthcare, education, retail and SaaS companies."
+        path="/about"
       />
       <PageHero
         eyebrow="About Rotstruck"

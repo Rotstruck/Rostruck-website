@@ -14,8 +14,9 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="ROTSTRUCK — Custom Software Development Studio"
-        description="Rotstruck builds custom software: hospital & EMR platforms, education systems, e-commerce stores, SaaS products, mobile apps, dashboards and API-connected systems."
+        title="Rotstruck | Custom Software Development Studio — Chennai"
+        description="Rotstruck builds custom software for healthcare, education, e-commerce and SaaS businesses. Hospital EMR platforms, mobile apps, dashboards and API-connected systems built in Chennai, India."
+        path="/"
       />
 
       <section className="relative overflow-hidden" data-testid="home-hero">

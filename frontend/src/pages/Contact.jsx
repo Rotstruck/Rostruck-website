@@ -115,8 +115,9 @@ export default function Contact() {
   return (
     <>
       <Seo
-        title="Contact — ROTSTRUCK"
-        description="Tell us what you are planning. Rotstruck will help shape it into a useful digital product."
+        title="Contact Rotstruck | Start Your Software Project — team@rotstruck.in"
+        description="Have a software project idea? Contact Rotstruck at team@rotstruck.in. We work with healthcare, education, retail and SaaS businesses to build custom digital products."
+        path="/contact"
       />
       <PageHero
         eyebrow="Contact"

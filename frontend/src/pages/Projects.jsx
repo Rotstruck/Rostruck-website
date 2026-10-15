@@ -76,8 +76,9 @@ export default function Projects() {
   return (
     <>
       <Seo
-        title="Projects — ROTSTRUCK"
-        description="Explore digital products designed for real workflows, real users, and measurable business impact — hospital platforms, education systems, commerce and more."
+        title="Projects | Rotstruck — Hospital, Education & E-commerce Software Case Studies"
+        description="Explore Rotstruck's portfolio of custom digital products: MEDBUILDS hospital platform, SKOLAR education system, VENDRA e-commerce and PULSEBOARD business dashboards."
+        path="/projects"
       />
       <PageHero
         eyebrow="Projects"
