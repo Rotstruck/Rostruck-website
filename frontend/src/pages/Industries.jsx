@@ -18,8 +18,8 @@ export default function Industries() {
   return (
     <>
       <Seo
-        title="Industries We Serve | Rotstruck — Healthcare, Education, Retail & SaaS"
-        description="Rotstruck builds purpose-built software for healthcare, hospitals, education, retail e-commerce, SaaS startups and professional services businesses across India and worldwide."
+        title="Industries We Serve | Rotstruck"
+        description="Explore how Rotstruck builds software solutions for healthcare, education, retail and SaaS businesses, tailored to their workflows and goals."
         path="/industries"
       />
       <PageHero

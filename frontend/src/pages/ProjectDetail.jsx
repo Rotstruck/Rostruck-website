@@ -29,7 +29,11 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <Seo title={`${project.name} — ROTSTRUCK Projects`} description={project.tagline} />
+      <Seo
+        title={`${project.name} | Rotstruck Case Study`}
+        description={project.tagline}
+        path={`/projects/${project.slug}`}
+      />
 
       <section className="relative overflow-hidden pb-16 pt-32 sm:pt-40" data-testid="project-hero">
         <div className="hero-vignette absolute inset-0" aria-hidden="true" />

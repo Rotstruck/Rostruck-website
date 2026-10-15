@@ -27,8 +27,8 @@ export default function Services() {
   return (
     <>
       <Seo
-        title="Software Development Services | Rotstruck — Healthcare, SaaS & Mobile Apps"
-        description="Rotstruck offers custom software development services: hospital and EMR systems, education platforms, e-commerce stores, SaaS products, mobile apps, API integrations and UI/UX design."
+        title="Software Development Services | Rotstruck"
+        description="Explore Rotstruck's software development services, from custom web applications and SaaS platforms to mobile apps and healthcare software."
         path="/services"
       />
       <PageHero

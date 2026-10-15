@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Rotstruck | Custom Software Development Studio — Chennai"
-        description="Rotstruck builds custom software for healthcare, education, e-commerce and SaaS businesses. Hospital EMR platforms, mobile apps, dashboards and API-connected systems built in Chennai, India."
+        title="Rotstruck | Custom Software Development Studio in Chennai"
+        description="Discover Rotstruck, a Chennai-based software development studio building custom software, healthcare platforms, SaaS products and mobile applications."
         path="/"
       />
 

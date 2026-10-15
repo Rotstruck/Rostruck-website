@@ -37,9 +37,9 @@ const setCanonical = (href) => {
  */
 export default function Seo({ title, description, path, image }) {
   useEffect(() => {
-    const canonicalPath = path || window.location.pathname;
-    const canonicalUrl = `${SITE}${canonicalPath === "/" ? "" : canonicalPath}${canonicalPath.endsWith("/") || canonicalPath === "/" ? "" : ""}`;
-    const cleanUrl = canonicalPath === "/" ? `${SITE}/` : `${SITE}${canonicalPath}`;
+    const rawPath = path || (typeof window !== "undefined" ? window.location.pathname : "/");
+    const normalizedPath = rawPath.startsWith("/") ? rawPath : `/${rawPath}`;
+    const cleanUrl = normalizedPath === "/" ? `${SITE}/` : `${SITE}${normalizedPath.replace(/\/+$/, "")}`;
     const ogImage = image
       ? image.startsWith("http") ? image : `${SITE}${image}`
       : `${SITE}/assets/logo-full.jpg`;

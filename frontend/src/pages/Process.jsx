@@ -15,8 +15,8 @@ export default function Process() {
   return (
     <>
       <Seo
-        title="Our Development Process | Rotstruck — Discover, Design, Build, Launch"
-        description="Rotstruck follows a six-stage development process: Discover, Plan, Design, Build, Test and Launch. We turn your business challenges into reliable, scalable digital products."
+        title="Our Software Development Process | Rotstruck"
+        description="Learn how Rotstruck takes software projects from discovery and design through development, testing and launch."
         path="/process"
       />
       <PageHero

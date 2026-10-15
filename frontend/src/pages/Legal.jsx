@@ -23,7 +23,11 @@ function LegalLayout({ eyebrow, title, updated, sections }) {
 export function Privacy() {
   return (
     <>
-      <Seo title="Privacy Policy — ROTSTRUCK" description="How Rotstruck collects, uses and protects your information." />
+      <Seo
+        title="Privacy Policy | Rotstruck"
+        description="Learn how Rotstruck collects, uses, and protects your information when using our website and services."
+        path="/privacy"
+      />
       <LegalLayout
         eyebrow="Legal"
         title="Privacy Policy"
@@ -44,7 +48,11 @@ export function Privacy() {
 export function Terms() {
   return (
     <>
-      <Seo title="Terms of Service — ROTSTRUCK" description="The terms governing use of the Rotstruck website and engagement of Rotstruck services." />
+      <Seo
+        title="Terms of Service | Rotstruck"
+        description="The terms governing use of the Rotstruck website and engagement of Rotstruck services."
+        path="/terms"
+      />
       <LegalLayout
         eyebrow="Legal"
         title="Terms of Service"
