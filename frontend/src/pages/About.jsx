@@ -86,7 +86,7 @@ export default function About() {
               <div className="absolute -inset-6 rounded-3xl bg-purple-600/15 blur-2xl" aria-hidden="true" />
               <img
                 src={IMAGES.studio}
-                alt="The Rotstruck engineering studio at work"
+                alt="A modern software development workspace"
                 className="relative aspect-[4/3] w-full rounded-2xl border border-purple-500/25 object-cover shadow-2xl [clip-path:polygon(0_0,100%_0,100%_100%,12%_100%,0_88%)]"
                 loading="lazy"
               />

@@ -59,7 +59,7 @@ export function Terms() {
         updated="January 2026"
         sections={[
           ["Use of this website", "This website presents the services and work of Rotstruck Software Development. You may browse and share its content for evaluation purposes. You may not copy the site's design, code, or branding for commercial use without written permission."],
-          ["Project showcases", "Project case studies shown on this website, including MEDBUILDS, SKOLAR, VENDRA and others, illustrate the type of systems Rotstruck designs and builds. Device imagery and interface visuals are abstract representations, not screenshots of client-confidential systems."],
+          ["Project showcases", "Project case studies shown on this website, including MEDBUILDS, SKOLAR, VENDRA and others, illustrate the type of systems Rotstruck designs and builds. Device imagery and interface visuals are representative mockups filled with sample data; names, figures and records shown in them are fictional and are not screenshots of client-confidential systems."],
           ["Enquiries and proposals", "Submitting the contact form does not create a client relationship or obligation on either side. Project scope, pricing, timelines and deliverables are defined only in a mutually signed agreement."],
           ["Intellectual property", "The Rotstruck name, logo, and website content are the property of Rotstruck Software Development. Intellectual property terms for client work are defined per project agreement."],
           ["Limitation of liability", "The website is provided as-is. While we work to keep information accurate and the site available, Rotstruck is not liable for decisions made based on website content or for temporary unavailability."],

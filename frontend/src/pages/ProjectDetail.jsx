@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Layers, Monitor, Palette, Target, Trophy } from "lucide-react";
 import Seo from "@/components/Seo";
 import FinalCTA from "@/components/FinalCTA";
+import HospitalShowcase from "@/components/HospitalShowcase";
 import { DeviceTrio, Macbook, Phone, Tablet } from "@/components/Mockups";
 import { MaskedLines, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { IMAGES, PROJECTS } from "@/data";
@@ -92,7 +93,11 @@ export default function ProjectDetail() {
             </Reveal>
           </div>
           <Reveal delay={0.25}>
-            <DeviceTrio variant={project.variant} className="mx-auto max-w-lg" />
+            {project.slug === "medbuilds" ? (
+              <HospitalShowcase className="mx-auto w-full max-w-xl" />
+            ) : (
+              <DeviceTrio variant={project.variant} className="mx-auto max-w-lg" />
+            )}
           </Reveal>
         </div>
       </section>
@@ -154,7 +159,7 @@ export default function ProjectDetail() {
         <Reveal>
           <div className="glass-panel rounded-3xl p-8 sm:p-10" data-testid="project-gallery">
             <h2 className="font-display text-2xl font-bold">Product Views</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Abstract interface compositions — every screen shape represents real product surfaces.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Representative screens for each surface of the product — desktop, tablet and mobile.</p>
             <div className="mt-8 grid grid-cols-1 items-end gap-6 sm:grid-cols-3">
               <Macbook variant={project.variant} className="w-full" />
               <Tablet variant={project.variant} className="w-full" />

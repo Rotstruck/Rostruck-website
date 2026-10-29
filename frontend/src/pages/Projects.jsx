@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Search } from "lucide-react";
 import Seo from "@/components/Seo";
 import PageHero from "@/components/PageHero";
 import FinalCTA from "@/components/FinalCTA";
@@ -38,17 +38,29 @@ function ProjectCard({ p }) {
         ))}
       </ul>
       <div className="mt-5 flex items-center gap-3">
-        <Link
-          to={`/projects/${p.slug}`}
-          data-testid={`view-project-${p.slug}`}
-          className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white transition-transform duration-300 hover:scale-[1.03]"
-        >
-          View Project <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-        </Link>
-        {p.liveUrl && (
-          <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-purple-500 dark:text-purple-300">
-            Visit Live Site
-          </a>
+        {p.liveUrl ? (
+          <>
+            <a
+              href={p.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid={`view-project-${p.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white transition-transform duration-300 hover:scale-[1.03]"
+            >
+              View {p.name} <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+            <Link to={`/projects/${p.slug}`} className="text-sm font-semibold text-purple-500 dark:text-purple-300">
+              Case Study
+            </Link>
+          </>
+        ) : (
+          <Link
+            to={`/projects/${p.slug}`}
+            data-testid={`view-project-${p.slug}`}
+            className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-4 py-2 text-sm font-semibold text-white transition-transform duration-300 hover:scale-[1.03]"
+          >
+            View Project <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
         )}
       </div>
     </motion.article>

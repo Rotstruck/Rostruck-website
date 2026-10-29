@@ -144,7 +144,7 @@ export default function Home() {
               <Reveal delay={0.25}>
                 <div className="mt-8 flex flex-wrap items-center gap-4">
                   <a
-                    href="https://medbuilds.in/"
+                    href={medbuilds.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="view-medbuilds-btn"

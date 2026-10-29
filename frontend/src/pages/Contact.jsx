@@ -152,7 +152,7 @@ export default function Contact() {
                       <input id="contact-email" type="email" data-testid="contact-email-input" className={inputCls} value={form.email} onChange={set("email")} autoComplete="email" placeholder="you@company.com" />
                     </Field>
                     <Field label="Phone Number" id="contact-phone">
-                      <input id="contact-phone" type="tel" data-testid="contact-phone-input" className={inputCls} value={form.phone} onChange={set("phone")} autoComplete="tel" placeholder="+1 …" />
+                      <input id="contact-phone" type="tel" data-testid="contact-phone-input" className={inputCls} value={form.phone} onChange={set("phone")} autoComplete="tel" placeholder="+91 …" />
                     </Field>
                     <Field label="Industry" id="contact-industry">
                       <select id="contact-industry" data-testid="contact-industry-select" className={inputCls} value={form.industry} onChange={set("industry")}>
