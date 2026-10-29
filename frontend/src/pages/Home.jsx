@@ -4,7 +4,7 @@ import Seo from "@/components/Seo";
 import HeroScene from "@/components/HeroScene";
 import Marquee from "@/components/Marquee";
 import FinalCTA from "@/components/FinalCTA";
-import { DeviceTrio } from "@/components/Mockups";
+import HospitalShowcase from "@/components/HospitalShowcase";
 import { MaskedLines, Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { CAPABILITIES, IMAGES, INDUSTRIES, PROCESS_STAGES, PROJECTS, SERVICES, WHY_ROTSTRUCK } from "@/data";
 
@@ -143,14 +143,16 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.25}>
                 <div className="mt-8 flex flex-wrap items-center gap-4">
-                  <Link
-                    to="/projects/medbuilds"
+                  <a
+                    href="https://medbuilds.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     data-testid="view-medbuilds-btn"
                     className="btn-glow group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-3 font-semibold text-white transition-transform duration-300 hover:scale-[1.03]"
                   >
                     View MEDBUILDS
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                  </Link>
+                  </a>
                   <span className="rounded-full border border-border px-4 py-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground">
                     Case Study
                   </span>
@@ -158,7 +160,7 @@ export default function Home() {
               </Reveal>
             </div>
             <Reveal delay={0.2}>
-              <DeviceTrio variant="hospital" phoneVariant="patient" className="mx-auto max-w-lg" />
+              <HospitalShowcase className="mx-auto w-full max-w-xl" />
             </Reveal>
           </div>
         </div>
